@@ -38,6 +38,30 @@ function playRound(playerChoice, computerChoice){
                 case "scissors":
                     return "Tie! scissors and scissors";
             }
+        default:
+            return "Incorrect Input";
     }
 }
-console.log(playRound("rock",getComputerChoice()));
+function game(){
+    let playerScore = 0;
+    let computerScore = 0;
+    while(playerScore< 5 && computerScore < 5){
+        result = playRound(prompt(),getComputerChoice());
+        console.log(result);
+        if(result.toLowerCase().includes("win")){
+            playerScore++;
+        }else if(result.toLowerCase().includes("lose")){
+            computerScore++;
+        }else{
+
+        }
+        console.log("Score : Your Score " + playerScore + " Computer Score : " + computerScore);
+        if(playerScore === 5){
+            console.log("You Win!")
+        }else if(computerScore == 5){
+            console.log("You Lose :(");
+        }
+    }
+
+}
+game();
