@@ -10,61 +10,67 @@ function getComputerChoice(){
     }
 }
 function playRound(playerChoice, computerChoice){
-    
+
+    const round = document.querySelector('.round');
+    round.classList.remove('lose', 'win', 'tie');
+
     switch(playerChoice.toLowerCase()){
         case "rock":
             switch(computerChoice){
                 case "rock":
-                    return 0;
+                    round.textContent = "Tie! Rock and Rock";
+                    round.classList.add('tie');
+                    break;
                 case "paper":
-                    return -1
+                    round.textContent = "You Lose! Paper beats Rock";
+                    round.classList.add('lose');
+                    break;
                 case "scissors":
-                    return 1;
+                    round.textContent = "You Win! Rock beats Scissors";
+                    round.classList.add('win');
+                    break;
             }
+            break;
         case "paper":
             switch(computerChoice){
                 case "rock":
-                    return 1;
+                    round.textContent= 'You Win! Paper beats Rock';
+                    round.classList.add("win");
+                    break;
                 case "paper":
-                    return 0;
+                    round.textContent = 'Tie! Paper and Paper';
+                    round.classList.add('tie');
+                    break;
                 case "scissors":
-                    return -1;
+                    round.textContent = 'You Lose! Scissors beats Paper';
+                    round.classList.add('lose');
+                    break;
             }
+            break;
         case "scissors":
             switch(computerChoice){
                 case "rock":
-                    return -1;
+                   round.textContent = 'You Lose! Rock beats Scissors';
+                   round.classList.add('lose');
+                   break;
                 case "paper":
-                    return 1;
+                    round.textContent = 'You Win! Scissors beats Paper';
+                    round.classList.add('win');
+                    break;
                 case "scissors":
-                    return 0;
+                    round.textContent = 'Tie! Scissors and Scissors';
+                    round.classList.add('tie');
+                    break;
             }
+            break;
         default:
-            return -2;
+            
     }
 }
 
-const round = document.querySelector('.round');
-
 function handleClick(e) {
     const playerChoice = e.target.id;
-    const result = playRound(playerChoice, getComputerChoice());
-    console.log(result);
-    round.classList.remove('lose', 'win', 'tie');
-    switch(result){
-        case -1:
-            round.textContent = 'You Lose!';
-            round.classList.add('lose');
-            break;
-        case 0:
-            round.textContent = 'Tie!';
-            round.classList.add('tie');
-            break;
-        case 1:
-            round.textContent= 'You Win!';
-            round.classList.add('win');
-            break;
-    }
+    playRound(playerChoice, getComputerChoice());
 }
 
 const rockButton = document.getElementById("rock");
