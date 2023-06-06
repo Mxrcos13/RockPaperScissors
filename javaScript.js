@@ -83,19 +83,22 @@ function updateScore(){
     const score = document.querySelector('.score');
     score.textContent = `Player Score : ${playerScore} Computer Score : ${computerScore}`;
     if(playerScore === 5) {
-        //TODO 
-        //create a pop up that shows who won
-        round.textContent = 'YOU WIN THE GAME!';
-        resetScore();
+        document.querySelector('.popuptext').textContent = 'You Win!';
+        document.querySelector('.popup').style.visibility = 'visible';
     }else if(computerScore === 5){
-        round.textContent = 'YOU LOSE THE GAME!';
-        resetScore();
+        document.querySelector('.popuptext').textContent = 'You Lose!';
+        document.querySelector('.popup').style.visibility = 'visible';
     }
 }
 
-function resetScore(){
+function resetGame(){
     playerScore = 0;
     computerScore = 0;
+    document.querySelector('.popup').style.visibility = 'hidden';
+    round.textContent = 'Choose your play';
+    round.classList.remove('lose', 'win', 'tie');
+    updateScore();
+
 }
 
 function handleClick(e) {
@@ -103,10 +106,17 @@ function handleClick(e) {
     playRound(playerChoice, getComputerChoice());
 }
 
+function playAgain(){
+    resetGame();
+
+}
+
 const rockButton = document.getElementById("rock");
 const paperButton = document.getElementById("paper");
 const scissorsButton = document.getElementById("scissors");
+const playAgainButton = document.getElementById('playagain');
 
 rockButton.addEventListener("click", handleClick);
 paperButton.addEventListener("click", handleClick);
 scissorsButton.addEventListener("click", handleClick);
+playAgainButton.addEventListener("click",playAgain);
