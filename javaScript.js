@@ -10,6 +10,7 @@ function getComputerChoice(){
     }
 }
 function playRound(playerChoice, computerChoice){
+    
     switch(playerChoice.toLowerCase()){
         case "rock":
             switch(computerChoice){
@@ -42,7 +43,25 @@ function playRound(playerChoice, computerChoice){
             return "Incorrect Input";
     }
 }
-function game(){
+
+function handleClick(e) {
+    const playerChoice = e.target.id;
+    const result = playRound(playerChoice, getComputerChoice());
+    console.log(result);
+}
+
+const rockButton = document.getElementById("rock");
+const paperButton = document.getElementById("paper");
+const scissorsButton = document.getElementById("scissors");
+
+rockButton.addEventListener("click", handleClick);
+paperButton.addEventListener("click", handleClick);
+scissorsButton.addEventListener("click", handleClick);
+
+
+
+
+/*function game(){
     let playerScore = 0;
     let computerScore = 0;
     while(playerScore< 5 && computerScore < 5){
@@ -65,3 +84,4 @@ function game(){
 
 }
 game();
+*/
