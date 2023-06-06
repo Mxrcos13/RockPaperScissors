@@ -15,39 +15,56 @@ function playRound(playerChoice, computerChoice){
         case "rock":
             switch(computerChoice){
                 case "rock":
-                    return "Tie! Rock and rock";
+                    return 0;
                 case "paper":
-                    return "You lose! Paper beats rock";
+                    return -1
                 case "scissors":
-                    return "You win! Rock beats scissors";
+                    return 1;
             }
         case "paper":
             switch(computerChoice){
                 case "rock":
-                    return "You win! Paper beats rock";
+                    return 1;
                 case "paper":
-                    return "Tie! Paper and paper";
+                    return 0;
                 case "scissors":
-                    return "You lose! Scissors beats paper";
+                    return -1;
             }
         case "scissors":
             switch(computerChoice){
                 case "rock":
-                    return "You lose! Rock beats scissors";
+                    return -1;
                 case "paper":
-                    return "You Win! Scissors beats paper"
+                    return 1;
                 case "scissors":
-                    return "Tie! scissors and scissors";
+                    return 0;
             }
         default:
-            return "Incorrect Input";
+            return -2;
     }
 }
+
+const round = document.querySelector('.round');
 
 function handleClick(e) {
     const playerChoice = e.target.id;
     const result = playRound(playerChoice, getComputerChoice());
     console.log(result);
+    round.classList.remove('lose', 'win', 'tie');
+    switch(result){
+        case -1:
+            round.textContent = 'You Lose!';
+            round.classList.add('lose');
+            break;
+        case 0:
+            round.textContent = 'Tie!';
+            round.classList.add('tie');
+            break;
+        case 1:
+            round.textContent= 'You Win!';
+            round.classList.add('win');
+            break;
+    }
 }
 
 const rockButton = document.getElementById("rock");
