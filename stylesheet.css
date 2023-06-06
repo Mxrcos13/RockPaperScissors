@@ -2,11 +2,26 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: grey;
+    margin: 0;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .header{
     font-size: 48px;
+    padding: 30px;
 }
-
+.round{
+    font-size: 24px;
+    padding: 50px;
+}
+.score{
+    font-size: 24px;
+    padding: 50px;
+}
 .lose{
     color: red;
 }
@@ -29,5 +44,23 @@ body{
     text-align: center;
     padding: 100px;
     visibility: hidden;
-
+}
+#rock{
+    margin: 75px;
+    width: 200px;
+    height: 200px;
+}
+#paper{
+    margin: 75px;
+    width: 200px;
+    height: 200px;
+}
+#scissors{
+    margin: 75px;
+    width: 200px;
+    height: 200px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
 }

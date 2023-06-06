@@ -85,9 +85,11 @@ function updateScore(){
     if(playerScore === 5) {
         document.querySelector('.popuptext').textContent = 'You Win!';
         document.querySelector('.popup').style.visibility = 'visible';
+        document.querySelector('.main').style.filter = 'blur(2px)';
     }else if(computerScore === 5){
         document.querySelector('.popuptext').textContent = 'You Lose!';
         document.querySelector('.popup').style.visibility = 'visible';
+        document.querySelector('.main').style.filter = 'blur(2px)';
     }
 }
 
@@ -95,6 +97,7 @@ function resetGame(){
     playerScore = 0;
     computerScore = 0;
     document.querySelector('.popup').style.visibility = 'hidden';
+    document.querySelector('.main').style.filter = 'blur(0px)';
     round.textContent = 'Choose your play';
     round.classList.remove('lose', 'win', 'tie');
     updateScore();
