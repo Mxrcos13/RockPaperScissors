@@ -12,18 +12,22 @@ function playRound(playerChoice, computerChoice){
                 case "rock":
                     round.textContent = "Tie! Rock and Rock";
                     round.classList.add('tie');
+                    document.getElementById('computerimg').src = './images/rock.webp';
                     break;
                 case "paper":
                     round.textContent = "You Lose! Paper beats Rock";
                     round.classList.add('lose');
                     computerScore++;
+                    document.getElementById('computerimg').src = './images/paper.jpeg';
                     break;
                 case "scissors":
                     round.textContent = "You Win! Rock beats Scissors";
                     round.classList.add('win');
                     playerScore++;
+                    document.getElementById('computerimg').src = './images/scissors.jpeg';
                     break;
             }
+            document.getElementById('playerimg').src = './images/rock.webp';
             break;
         case "paper":
             switch(computerChoice){
@@ -31,10 +35,12 @@ function playRound(playerChoice, computerChoice){
                     round.textContent= 'You Win! Paper beats Rock';
                     round.classList.add("win");
                     playerScore++;
+                    document.getElementById('computerimg').src = './images/rock.webp';
                     break;
                 case "paper":
                     round.textContent = 'Tie! Paper and Paper';
                     round.classList.add('tie');
+                    document.getElementById('computerimg').src = './images/paper.jpeg';
                     break;
                 case "scissors":
                     round.textContent = 'You Lose! Scissors beats Paper';
@@ -42,6 +48,7 @@ function playRound(playerChoice, computerChoice){
                     computerScore++;
                     break;
             }
+            document.getElementById('playerimg').src = './images/paper.jpeg';
             break;
         case "scissors":
             switch(computerChoice){
@@ -49,17 +56,20 @@ function playRound(playerChoice, computerChoice){
                    round.textContent = 'You Lose! Rock beats Scissors';
                    round.classList.add('lose');
                    computerScore++;
+                   document.getElementById('computerimg').src = './images/rock.webp';
                    break;
                 case "paper":
                     round.textContent = 'You Win! Scissors beats Paper';
                     round.classList.add('win');
                     playerScore++;
+                    document.getElementById('computerimg').src = './images/paper.jpeg';
                     break;
                 case "scissors":
                     round.textContent = 'Tie! Scissors and Scissors';
                     round.classList.add('tie');
                     break;
             }
+            document.getElementById('playerimg').src = './images/scissors.jpeg';
             break;
         default:
             
@@ -100,6 +110,8 @@ function resetGame(){
     document.querySelector('.main').style.filter = 'blur(0px)';
     round.textContent = 'Choose your play';
     round.classList.remove('lose', 'win', 'tie');
+    document.getElementById('playerimg').src = ' ';
+    document.getElementById('computerimg').src = ' ';
     updateScore();
 
 }
