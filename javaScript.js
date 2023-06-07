@@ -105,7 +105,7 @@ function resetGame(){
 }
 
 function handleClick(e) {
-    const playerChoice = e.target.id;
+    const playerChoice = e.currentTarget.id;
     playRound(playerChoice, getComputerChoice());
 }
 

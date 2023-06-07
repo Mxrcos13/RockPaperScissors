@@ -14,6 +14,10 @@ body{
     font-size: 48px;
     padding: 30px;
 }
+.container{
+    display: flex;
+    flex-direction: row;
+}
 .round{
     font-size: 24px;
     padding: 50px;
@@ -45,22 +49,38 @@ body{
     padding: 100px;
     visibility: hidden;
 }
-#rock{
-    margin: 75px;
+.playerchoicebox,
+.computerchoicebox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.playerchoice,
+.computerchoice{
+    background-color: beige;
     width: 200px;
     height: 200px;
+    padding: 0;
+    border-radius: 15px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
-#paper{
-    margin: 75px;
-    width: 200px;
-    height: 200px;
-}
+#rock,
+#paper,
 #scissors{
+    background-color: beige;
     margin: 75px;
     width: 200px;
     height: 200px;
+    padding: 0;
+    border-radius: 15px;
 }
 .buttons{
     display: flex;
     justify-content: space-around;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
