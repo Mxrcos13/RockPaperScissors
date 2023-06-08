@@ -12,22 +12,22 @@ function playRound(playerChoice, computerChoice){
                 case "rock":
                     round.textContent = "Tie! Rock and Rock";
                     round.classList.add('tie');
-                    document.getElementById('computerimg').src = './images/rock.webp';
+                    document.getElementById('computerimg').src = './images/minecraftrock.webp';
                     break;
                 case "paper":
                     round.textContent = "You Lose! Paper beats Rock";
                     round.classList.add('lose');
                     computerScore++;
-                    document.getElementById('computerimg').src = './images/paper.jpeg';
+                    document.getElementById('computerimg').src = './images/minecraftpaper.webp';
                     break;
                 case "scissors":
                     round.textContent = "You Win! Rock beats Scissors";
                     round.classList.add('win');
                     playerScore++;
-                    document.getElementById('computerimg').src = './images/scissors.jpeg';
+                    document.getElementById('computerimg').src = './images/minecraftscissors.webp';
                     break;
             }
-            document.getElementById('playerimg').src = './images/rock.webp';
+            document.getElementById('playerimg').src = './images/minecraftrock.webp';
             break;
         case "paper":
             switch(computerChoice){
@@ -35,20 +35,21 @@ function playRound(playerChoice, computerChoice){
                     round.textContent= 'You Win! Paper beats Rock';
                     round.classList.add("win");
                     playerScore++;
-                    document.getElementById('computerimg').src = './images/rock.webp';
+                    document.getElementById('computerimg').src = './images/minecraftrock.webp';
                     break;
                 case "paper":
                     round.textContent = 'Tie! Paper and Paper';
                     round.classList.add('tie');
-                    document.getElementById('computerimg').src = './images/paper.jpeg';
+                    document.getElementById('computerimg').src = './images/minecraftpaper.webp';
                     break;
                 case "scissors":
                     round.textContent = 'You Lose! Scissors beats Paper';
                     round.classList.add('lose');
                     computerScore++;
+                    document.getElementById('computerimg').src = './images/minecraftscissors.webp';
                     break;
             }
-            document.getElementById('playerimg').src = './images/paper.jpeg';
+            document.getElementById('playerimg').src = './images/minecraftpaper.webp';
             break;
         case "scissors":
             switch(computerChoice){
@@ -56,20 +57,21 @@ function playRound(playerChoice, computerChoice){
                    round.textContent = 'You Lose! Rock beats Scissors';
                    round.classList.add('lose');
                    computerScore++;
-                   document.getElementById('computerimg').src = './images/rock.webp';
+                   document.getElementById('computerimg').src = './images/minecraftrock.webp';
                    break;
                 case "paper":
                     round.textContent = 'You Win! Scissors beats Paper';
                     round.classList.add('win');
                     playerScore++;
-                    document.getElementById('computerimg').src = './images/paper.jpeg';
+                    document.getElementById('computerimg').src = './images/minecraftpaper.webp';
                     break;
                 case "scissors":
                     round.textContent = 'Tie! Scissors and Scissors';
                     round.classList.add('tie');
+                    document.getElementById('computerimg').src = './images/minecraftscissors.webp';
                     break;
             }
-            document.getElementById('playerimg').src = './images/scissors.jpeg';
+            document.getElementById('playerimg').src = './images/minecraftscissors.webp';
             break;
         default:
             
